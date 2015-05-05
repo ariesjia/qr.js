@@ -1048,15 +1048,17 @@
       // Draw the QR code.
       c2d.clearRect(0, 0, size, size);
       c2d.fillStyle = data.background || '#fff';
-      c2d.fillRect(0, 0, px * (width + 8), px * (width + 8));
+      c2d.fillRect(0, 0, size , size);
       c2d.fillStyle = data.foreground || '#000';
+
+      var space = (size - (px * width)) /2;
 
       var i, j;
 
       for (i = 0; i < width; i++) {
         for (j = 0; j < width; j++) {
           if (frame[j * width + i]) {
-            c2d.fillRect(px * i, px * j, px, px);
+            c2d.fillRect( (px * i) + space , (px * j) + space, px, px);
           }
         }
       }
