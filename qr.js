@@ -1051,7 +1051,7 @@
       c2d.fillRect(0, 0, size , size);
       c2d.fillStyle = data.foreground || '#000';
 
-      var space = (size - (px * width) + 1) / 2;
+      var space = Math.floor((size - (px * width)) / 2);
 
       var i, j;
 
